@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "6de769d5-f053-4c6f-9776-e8316d6e0f13",
+		"name": "SOALab2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29418944"
+	},
+	"item": [
+		{
+			"name": "getAccount",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    <soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n                    xmlns:ban=\"http://example.com/bank\">\r\n    <soapenv:Header/>\r\n    <soapenv:Body>\r\n        <ban:GetAccountRequest>\r\n        <ban:accountId>A100</ban:accountId>\r\n        </ban:GetAccountRequest>\r\n    </soapenv:Body>\r\n    </soapenv:Envelope>\r\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ws",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n                  xmlns:ban=\"http://example.com/bank\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <ban:DepositRequest>\r\n      <ban:accountId>A100</ban:accountId>\r\n      <ban:amount>0</ban:amount>\r\n    </ban:DepositRequest>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>\r\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ws",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "withdraw",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n                  xmlns:ban=\"http://example.com/bank\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <ban:WithdrawRequest>\r\n        <ban:accountId>A100</ban:accountId>\r\n        <ban:amount>30</ban:amount>\r\n    </ban:WithdrawRequest>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>\r\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ws",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ws"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
